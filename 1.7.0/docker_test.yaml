@@ -1,0 +1,18 @@
+schemaVersion: "2.0.0"
+
+metadataTest:
+    workdir: "/home/appuser"
+
+commandTests:
+    - name: "elixir"
+      command: "elixir"
+      args: ["--version"]
+      expectedOutput: ["1.7.0"]
+    - name: "mix"
+      command: "mix"
+      args: ["--version"]
+      expectedOutput: ["1.7.0"]
+    - name: "iex"
+      command: "iex"
+      args: ["--version"]
+      expectedOutput: ["1.7.0"]
