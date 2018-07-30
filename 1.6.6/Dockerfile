@@ -13,3 +13,8 @@ RUN ln -s /opt/elixir/bin/iex /usr/local/bin/iex && \
     ln -s /opt/elixir/bin/mix /usr/local/bin/mix && \
     ln -s /opt/elixir/bin/elixir /usr/local/bin/elixir && \
     ln -s /opt/elixir/bin/elixirc /usr/local/bin/elixirc
+
+RUN useradd -ms /bin/bash appuser
+WORKDIR /home/appuser
+USER appuser
+RUN mix local.rebar --force && mix local.hex --force
